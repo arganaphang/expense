@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Lato as FontSans } from "next/font/google";
 import { cn } from "@/lib/utils";
 import "@/styles/globals.css";
+import TrpcProvider from "@/components/provider/trpc";
 
 export const fontSans = FontSans({
   weight: "400",
@@ -27,7 +28,7 @@ export default function RootLayout({
           fontSans.variable
         )}
       >
-        {children}
+        <TrpcProvider>{children}</TrpcProvider>
       </body>
     </html>
   );
